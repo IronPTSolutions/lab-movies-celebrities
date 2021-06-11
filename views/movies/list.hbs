@@ -1,0 +1,26 @@
+<div class="container">
+    {{#each movies as | movie|}}
+    <ul>
+        <li>{{movie.title}}</li>
+        <div class="row m-x-5">
+        <a href="/movies/{{movie.id}}">See the details</a>
+        <a href="/movies/{{movie.id}}/edit">Edit </a>
+        </div>
+        <form action="/movies/{{movie.id}}/delete" method="post">
+        <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+    </ul>
+        
+    {{/each}}
+    <a href="/movies/new">Create your Movie</a>
+</div>
+
+{{!-- <label for="cast-select">
+      Cast:
+      <select name="cast" multiple>
+        <option disable selected value=""></option>
+        {{#each cast}}
+          <option value="{{this._id}}"> {{this.name}} </option>
+        {{/each}}
+      </select>
+    </label> --}}
