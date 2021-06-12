@@ -1,0 +1,35 @@
+<h1>{{title}}</h1>
+<h2>Fill our form</h2>
+
+<form method="POST" action="/movies/create">
+
+  <div class="mb-3">
+    <label for="title" class="form-label">Title</label>
+    <input type="text" class="form-control" id="title" aria-describedby="Movie title" name="title" placeholder="Movie title">  
+  </div>
+
+  <div class="mb-3">
+    <label for="genre" class="form-label">Genre</label>
+    <input type="text" class="form-control" id="genre" aria-describedby="Movie genre" name="genre" placeholder="Movie genre">    
+  </div>
+
+   <div class="mb-3">
+    <label for="plot" class="form-label">Plot</label>
+    <textarea class="form-control" id="celebrity catch" aria-describedby="Briefly describe the plot" name="plot" placeholder="Briefly describe the plot">    
+    </textarea>
+  </div>
+
+  <div>
+    <div class="row">  
+      <label for="cars">Select al the star that appear:</label>
+      <select name="cast" id="cast" multiple>
+        {{#each celebrities as |celebrity|}}
+        <option value="{{celebrity._id}}">{{celebrity.name}}</option> 
+         {{/each}}
+      </select>
+    </div>
+  </div>
+  
+  <button type="submit" class="btn btn-primary mb-3 m-4 tex-center">Submit your movie</button>
+
+</form>

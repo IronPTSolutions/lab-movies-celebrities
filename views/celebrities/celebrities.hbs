@@ -1,0 +1,26 @@
+<div class="container text-center">
+
+  <h2>Celebrities</h2>
+
+  {{#each celebrities as |celebrity|}}
+
+    <div class="card">
+
+      <div class="card-header">
+        <h3>{{celebrity.name}}, {{celebrity.occupation}}</h3>
+      </div>
+
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <blockquote class="blockquote">
+          <i class="fas fa-quote-left"></i> {{celebrity.catchPhrase}}
+          </blockquote>
+        </li>
+      </ul>
+
+    </div>
+
+  {{/each}}
+
+  <a href="/celebrities/new" class="btn btn-primary mb-3 m-4 tex-center">Register a celebrity</a>
+</div>
