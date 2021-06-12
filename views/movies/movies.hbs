@@ -1,0 +1,21 @@
+<div class="container text-center">
+
+<h2 class="text-center">Movies</h2>
+{{#each movies as |movie|}}
+  <div class="card text-center">
+
+    <div class="card-header">
+      {{movie.title}}
+    </div>
+
+    <div class="card-body">
+      <a href="/movies/{{movie._id}}" class="btn btn-primary">Wanna know more?</a>
+    </div>
+
+  </div>
+
+{{/each}}
+
+<a href="/movies/new" class="btn btn-primary mb-3 m-4 tex-center">Register a movie</a>
+
+</div>

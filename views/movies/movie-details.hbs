@@ -1,0 +1,27 @@
+
+<div class="container d-flex flex-row">
+    <h1>{{movie.title}} </h1>
+    <div class="m-5 p-3 col-sm-6">
+        <h5>GENRE:</h5> 
+        <p>{{movie.genre}}</p>
+        <h5>SYNOPSIS</h5>
+        <p>{{movie.plot}}</p> 
+
+        <h5>CAST</h5>
+        <p>
+        {{#each movie.cast as |actor|}}
+        {{actor.name}} | 
+        {{/each}}
+        </p>
+        
+        <div class="d-flex flex-row">
+            <form method="POST" action="/movies/{{movie._id}}/delete">
+                <button type="submit" class="btn btn-primary mb-3 my-4 mr-2 tex-center">Delete this movie</button>
+            </form>
+
+            <form method="GET" action="/movies/{{movie._id}}/edit">
+                <button type="submit" class="btn btn-primary mb-3 my-4 tex-center">Edit this movie</button>
+            </form>
+        </div>
+    </div>
+</div>
