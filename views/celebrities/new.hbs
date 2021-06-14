@@ -1,0 +1,26 @@
+<h1>New Celebrity</h1>
+
+<form action="/celebrities/new" method="POST">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input name="name" type="text" class="form-control {{#if errors.name}}is-invalid{{/if}}" id="name" placeholder="Enter name"
+      value="{{ celebrity.name }}">
+    {{#if errors.name}}
+      <div class="invalid-feedback">
+        {{errors.name.message}}
+      </div>
+    {{/if}}
+  </div>
+
+  <div class="form-group">
+    <label for="occupation">Occupation</label>
+    <input name="occupation" type="text" class="form-control" id="occupation" placeholder="Enter occupation" value="{{ celebrity.occupation }}">
+  </div>
+
+    <div class="form-group">
+    <label for="catchPhrase">Catch Phrase</label>
+    <input name="catchPhrase" type="text" class="form-control" id="catchPhrase" placeholder="Enter Catch Phrase" value="{{ celebrity.catchPhrase }}">
+  </div>
+
+  <button type="submit" class="btn btn-outline-primary rounded-pill">Send</button>
+</form>
