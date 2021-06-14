@@ -1,0 +1,10 @@
+<h1>List of Movies</h1>
+<div>
+    {{#each movies as |movie|}}    
+        <p>{{movie.title}}</p>
+        <a href="/movies/{{_id}}" class="btn btn-outline-primary rounded-pill">See details</a>    
+        <a href="/movies/{{_id}}/edit" class="btn btn-outline-primary rounded-pill">Edit</a>    
+    {{/each}}  
+</div>
+
+<a href="/movies/new" class="btn btn-outline-primary rounded-pill">Add a Movie</a>          

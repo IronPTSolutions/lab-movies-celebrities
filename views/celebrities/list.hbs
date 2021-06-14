@@ -1,0 +1,8 @@
+<h1>List of Celebrities</h1>
+<div>
+    {{#each celebrities as |celebrity|}}    
+        <p>{{celebrity.name}}</p>
+    {{/each}}  
+</div>
+
+<a href="/celebrities/new" class="btn btn-outline-primary rounded-pill">Add a Celebrity</a>          
