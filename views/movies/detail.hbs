@@ -1,0 +1,9 @@
+<div class="container">
+    {{#each movie as | movie|}}
+        <p>{{movie.title}} {{movie.genre}} {{movie.plot}}</p>
+        {{#each cast as | celebrity | }}
+        <p>{{movie.cast.name}}</p>
+        {{/each}}
+    {{/each}}
+    <a href="/movies">Back to the list!</a>
+</div>

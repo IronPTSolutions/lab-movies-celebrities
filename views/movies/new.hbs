@@ -1,0 +1,31 @@
+<div class="container">
+    <h2>Create your favourite Celebrity</h2>
+    <form action="/movies" method="post">
+
+        <div class="mb-3">
+         <label for="formGroupExampleInput2" class="form-label">Title</label>
+         <input type="text" name="title" class="form-control" id="formGroupExampleInput2" placeholder="Write the Movie's Title">
+        </div>
+
+        <div class="mb-3">
+         <label for="formGroupExampleInput2" class="form-label">Genre</label>
+         <input type="text" name="genre" class="form-control" id="formGroupExampleInput2" placeholder="Write the Movie's Genre">
+        </div>
+
+        <div class="mb-3">
+         <label for="formGroupExampleInput2" class="form-label">Plot</label>
+         <input type="text" name="plot" class="form-control" id="formGroupExampleInput2" placeholder="Write the Movie's Plot">
+        </div>
+        <label for="cast-select">
+            Cast:
+        <select name="cast" multiple>
+            <option disable selected value=""></option>
+            {{#each cast as | celebrity| }}
+             <option value="{{celebrity.id}}"> {{celebrity.name}} </option>
+            {{/each}}
+      </select>
+        {{!-- tengo que crear las opciones y unirlas entre si --}}
+            
+        <button type="submit">Create!!</button>
+    </form>
+</div>

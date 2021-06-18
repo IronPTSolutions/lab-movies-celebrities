@@ -1,0 +1,23 @@
+<div class="container">
+    <h2>Edit your favourite Movie</h2>
+    <form action="/movies/{{movie.id}}" method="post">
+
+        <div class="mb-3">
+         <label for="formGroupExampleInput2" class="form-label">Title</label>
+         <input type="text" value="{{movie.title}}" name="title" class="form-control" id="formGroupExampleInput2" placeholder="Write the Movie's Title">
+        </div>
+
+        <div class="mb-3">
+         <label for="formGroupExampleInput2" class="form-label">Genre</label>
+         <input type="text" value="{{movie.genre}}" name="genre" class="form-control" id="formGroupExampleInput2" placeholder="Write the Movie's Genre">
+        </div>
+
+        <div class="mb-3">
+         <label for="formGroupExampleInput2" class="form-label">Plot</label>
+         <input type="text" value="{{movie.plot}}" name="plot" class="form-control" id="formGroupExampleInput2" placeholder="Write the Movie's Plot">
+        </div>
+        {{!-- tengo que crear las opciones y unirlas entre si --}}
+
+        <button type="submit">Edit!!</button>
+    </form>
+</div>
