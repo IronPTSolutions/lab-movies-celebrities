@@ -6,10 +6,19 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <a class="nav-link active" aria-current="page" href="/celebrities">Celebrities</a>
+        {{#if currentUser}}
+       
         <a class="nav-link" href="/celebrities/new">New Celebrities</a>
-        <a class="nav-link" href="/movies">Movies</a>
         <a class="nav-link" href="/movies/new" >New Movies</a>
+        <a class="nav-link">{{currentUser.email}}</a>
+        <a href="/logout" class="nav-link">Logout</a>
+        {{else}}
+        <a class="nav-link active" aria-current="page" href="/celebrities">Celebrities</a>
+        <a class="nav-link" href="/movies">Movies</a>
+
+        <a class="nav-link" href="/register">Register </a>
+        <a class="nav-link" href="/login" > Login </a>
+        {{/if}}
       </div>
     </div>
   </div>

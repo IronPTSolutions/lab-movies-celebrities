@@ -24,7 +24,6 @@ module.exports.create = (req, res, next) => {
 }
 
 module.exports.doCreate = (req, res, next) => {
-    console.log(req.body)
     const movie = new Movie({
         title: req.body.title,
         genre: req.body.genre,

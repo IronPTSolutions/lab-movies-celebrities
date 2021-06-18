@@ -2,7 +2,7 @@ const express = require('express');
 const common = require('../controllers/common.controller')
 const celebrities = require('../controllers/celebrities.controller')
 const movies = require('../controllers/movies.controller')
-
+const auth = require('../controllers/auth.controller')
 
 const router = express.Router();
 router.get('/', common.index)
@@ -32,4 +32,12 @@ router.post('/movies/:id', movies.doEdit)
 
 router.get('/movies/:idMovie', movies.detail)
 router.post('/movies/:id/delete', movies.delete)
+
+//////////////////////////////////////////////////////////////
+router.get('/register', auth.register)
+router.post('/register', auth.doRegister)
+router.get('/login', auth.login)
+router.post('/login', auth.doLogin)
+router.get('/logout', auth.logout)
+
 module.exports = router;
