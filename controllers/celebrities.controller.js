@@ -12,7 +12,9 @@ module.exports.create = (req, res, next) => {
 
     Celebrity.create(celebrity)
         .then((celebrity) => {
-            res.redirect('/')
+            res.redirect('/celebrities')
         })
-        .catch(error => next(error))
+        .catch((error) => {
+            res.render('celebrities/new-celebrity')
+        })
 }
