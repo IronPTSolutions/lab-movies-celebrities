@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const Celebrity = require('../models/celebrity.model')
+const { Celebrity } = require('../models')
 
 
 
