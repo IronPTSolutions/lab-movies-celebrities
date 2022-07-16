@@ -18,3 +18,9 @@ module.exports.create = (req, res, next) => {
             res.render('celebrities/new-celebrity')
         })
 }
+
+module.exports.list = (req, res, next) => {
+    Celebrity.find()
+        .then((celebrities) => res.render('celebrities/celebrities', { celebrities, title: 'New Celebrity' }))
+        .catch(error => next(error))
+}
