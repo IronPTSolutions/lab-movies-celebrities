@@ -25,3 +25,16 @@ module.exports.list =(req, res, next) => {
         })
         .catch(error => next(error))
 }
+
+module.exports.detail = (req, res, next) => {
+    Movie.findById(req.params.id)
+        .populate('mainCelebrity')
+        .then((movie) => {
+            if (movie) {
+                res.render('movies/movie-details', { movie })
+            } else {
+                res.redirect('/')
+            }
+        })
+        .catch(error => next(error))
+}
