@@ -38,3 +38,11 @@ module.exports.detail = (req, res, next) => {
         })
         .catch(error => next(error))
 }
+
+module.exports.delete = (req, res, next) => {
+    Movie.findByIdAndDelete(req.params.id)
+     .then(() => {
+        res.redirect('/movies')
+     })
+     .catch((error) => next(error))
+}

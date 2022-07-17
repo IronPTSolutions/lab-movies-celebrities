@@ -13,6 +13,7 @@ router.get('/movies/new', movies.create)
 router.get('/movies', movies.list)
 router.get('/movies/:id/detail', movies.detail)
 router.post('/movies', movies.doCreate)
+router.post('/movies/:id/delete', movies.delete)
 
 
 

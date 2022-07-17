@@ -5,3 +5,7 @@
 <h4>Plot: {{movie.plot}}</h4>
 <h3>Main Character: {{movie.mainCelebrity.name}}</h3>
 <h3>Main Character occupation: {{movie.mainCelebrity.occupation}}</h3>
+
+<form action="/movies/{{movie.id}}/delete" method="post">
+    <button type="submit">Delete</button>
+</form>
