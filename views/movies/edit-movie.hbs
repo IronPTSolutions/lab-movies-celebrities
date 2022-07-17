@@ -13,7 +13,7 @@
 
 <select name="mainCelebrity">
     {{#each celebrities as |celebrity|}}        
-            <option value="{{celebrity.id}}" {{!-- {{#when ../movie.mainCelebrity 'eq' celebrity.id}}selected="selected"{{/when}} --}}>{{celebrity.name}}</option>
+            <option value="{{celebrity.id}}">{{celebrity.name}}</option>
         
     {{/each}}
 </select>
