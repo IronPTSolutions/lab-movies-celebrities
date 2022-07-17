@@ -46,3 +46,29 @@ module.exports.delete = (req, res, next) => {
      })
      .catch((error) => next(error))
 }
+
+module.exports.edit = (req, res, next) => {
+    Movie.findById(req.params.id)
+        .then((movie) => {
+            if (movie) {
+                return Celebrity.find()
+                    .then((celebrities) => {
+                        res.render('movies/edit-movie', { movie, celebrities })
+                    })
+            } else {
+                res.redirect('/movies')
+            }
+            
+        })
+        .catch((error) => next(error))
+}
+
+module.exports.doEdit = (req, res, next) => {
+    const movie = ({ title, genre, plot, mainCelebrity } = req.body)
+
+    Movie.findByIdAndUpdate(req.params.id, movie)
+        .then((movie) => {
+            res.redirect(`/movies/${movie.id}/detail`)
+        })
+        .catch(error => next(error))
+}

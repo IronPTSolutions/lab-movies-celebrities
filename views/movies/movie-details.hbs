@@ -6,6 +6,7 @@
 <h3>Main Character: {{movie.mainCelebrity.name}}</h3>
 <h3>Main Character occupation: {{movie.mainCelebrity.occupation}}</h3>
 
+<a href="/movies/{{movie.id}}/edit">Edit</a>
 <form action="/movies/{{movie.id}}/delete" method="post">
     <button type="submit">Delete</button>
 </form>
