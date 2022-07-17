@@ -17,7 +17,7 @@ const movieSchema = new Schema ({
     mainCelebrity: {
         type: Schema.Types.ObjectId,
         required: true,
-        ref: 'Celebritie'
+        ref: 'Celebrity'
     }
 
 
