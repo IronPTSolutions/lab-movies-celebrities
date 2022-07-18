@@ -1,0 +1,28 @@
+<a href="/" class="btn btn-link">Volver</a>
+
+<div class="container {{#if movies.length}}{{else}}h-75 d-flex flex-column justify-content-center{{/if}}">
+    {{#if movies.length}}
+        <div class="row">
+            {{#each movies}}
+                <div class="col-4 mt-2 mb-2">
+                    <a href="/movies/{{this._id}}" class="">
+                        <div class="card h-100 w-100">
+                            <div class="card-body d-flex flex-column justify-content-between">
+                                <h5 class="card-title">{{this.title}}</h5>
+                                <p class="card-text">{{this.genre}}</p>
+                                <p class="card-text">{{this.plot}}</p>
+                                <p class="card-text">{{this.mainCelebrity.name}}</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            {{/each}}
+        </div>
+    {{else}}
+        <div class="row justify-content-center align-content-center text-center">
+            <div class="col-4">
+                <p>No tenemos ninguna pelicula definida</p>
+            </div>
+        </div>
+    {{/if}}
+</div>

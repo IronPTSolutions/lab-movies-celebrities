@@ -1,0 +1,27 @@
+<a href="/" class="btn btn-link">Volver</a>
+
+<div class="row justify-content-center">
+    <div class="col-12 col-md-6 col-lg-4">
+        <h2>New Celebrity</h2>
+        <form action="/celebrities" method="POST">
+            <div class="input-group mb-2">
+                <span class="input-group-text"><i class="fa fa-tag fa-fw"></i></span>
+                <input type="text" name="name" value="{{ celebrity.name }}" class="form-control {{#if errors.name }}is-invalid{{/if}}" placeholder="Enter celebrity name..." />
+                {{#if errors.name }}<div class="invalid-feedback">{{ errors.name }}</div>{{/if}}
+            </div>
+            <div class="input-group mb-2">
+                <span class="input-group-text"><i class="fa fa-tag fa-fw"></i></span>
+                <input type="text" name="occupation" value="{{ celebrity.occupation }}" class="form-control {{#if errors.occupation }}is-invalid{{/if}}" placeholder="Enter celebrity occupation..." />
+                {{#if errors.occupation }}<div class="invalid-feedback">{{ errors.occupation }}</div>{{/if}}
+            </div>
+            <div class="input-group mb-2">
+                <span class="input-group-text"><i class="fa fa-tag fa-fw"></i></span>
+                <input type="text" name="catchPhrase" value="{{ celebrity.catchPhrase }}" class="form-control {{#if errors.catchPhrase }}is-invalid{{/if}}" placeholder="Enter celebrity catchPhrase..." />
+                {{#if errors.catchPhrase }}<div class="invalid-feedback">{{ errors.catchPhrase }}</div>{{/if}}
+            </div>
+            <div class="d-grid">
+                <button class="btn btn-primary" type="submit">Create</button>
+            </div>
+        </form>
+    </div>
+</div>

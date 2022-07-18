@@ -1,0 +1,27 @@
+<a href="/" class="btn btn-link">Volver</a>
+
+<div class="container {{#if celebrities.length}}{{else}}h-75 d-flex flex-column justify-content-center{{/if}}">
+    {{#if celebrities.length}}
+        <div class="row">
+            {{#each celebrities}}
+                <div class="col-4 mt-2 mb-2">
+                    <a href="/celebrities/{{this._id}}" class="">
+                        <div class="card h-100 w-100">
+                            <div class="card-body d-flex flex-column justify-content-between">
+                                <h5 class="card-title">{{this.name}}</h5>
+                                <p class="card-text">{{this.occupation}}</p>
+                                <p class="card-text">{{this.catchPhrase}}</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            {{/each}}
+        </div>
+    {{else}}
+        <div class="row justify-content-center align-content-center text-center">
+            <div class="col-4">
+                <p>No tenemos ninguna celebridad definida</p>
+            </div>
+        </div>
+    {{/if}}
+</div>
