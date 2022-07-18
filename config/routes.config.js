@@ -14,8 +14,10 @@ router.post('/celebrities', celebrities.doCreate)
 router.get('/movies', movies.list)
 router.get('/movies/new', movies.create)
 router.get('/movies/:id', movies.details)
+router.get('/movies/:id/edit', movies.edit)
 router.post('/movies', movies.doCreate)
 router.post('/movies/:id/delete', movies.delete)
+router.post('/movies/:id/edit', movies.doEdit)
 
 
 
