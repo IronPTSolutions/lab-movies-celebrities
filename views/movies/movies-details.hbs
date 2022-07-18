@@ -1,0 +1,33 @@
+<a href="/movies" class="btn btn-link">Volver</a>
+
+<div class="container detail-container d-flex flex-column justify-content-center">
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <div class="row">
+                <div class="col-9">
+                    <h3>{{movies.title}}</h3>
+                </div>
+                <div class="col-3 d-flex">
+                    <a href="/movies/{{movies._id}}/edit" class="btn btn-link"><i class="fa-solid fa-pen"></i></a>
+                    <form action="/movies/{{movies._id}}/delete" method="POST">
+                        <button type="submit" class="btn btn-link">
+                            <i class="fa-solid fa-trash-can"></i>
+                        </button>
+                    </form>        
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <h5>Genre</h5>
+                    <p>{{movies.genre}}</p>
+                    <h5>Plot</h5>
+                    <p>{{movies.plot}}</p>
+                </div>
+                <div class="col-6">
+                    <h5>Main Celebrity</h5>
+                    <p>{{movies.mainCelebrity.name}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

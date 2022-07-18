@@ -1,0 +1,35 @@
+<a href="/" class="btn btn-link">Volver</a>
+
+<div class="row justify-content-center">
+    <div class="col-12 col-md-6 col-lg-4">
+        <h2>Edit Movie</h2>
+        <form action="/movies/{{movie._id}}/edit" method="POST">
+            <div class="input-group mb-2">
+                <span class="input-group-text"><i class="fa fa-tag fa-fw"></i></span>
+                <input type="text" name="title" value="{{ movie.title }}" class="form-control {{#if errors.title }}is-invalid{{/if}}" placeholder="Enter movie title..." />
+                {{#if errors.title }}<div class="invalid-feedback">{{ errors.title }}</div>{{/if}}
+            </div>
+            <div class="input-group mb-2">
+                <span class="input-group-text"><i class="fa fa-tag fa-fw"></i></span>
+                <input type="text" name="genre" value="{{ movie.genre }}" class="form-control {{#if errors.genre }}is-invalid{{/if}}" placeholder="Enter movie genre..." />
+                {{#if errors.genre }}<div class="invalid-feedback">{{ errors.genre }}</div>{{/if}}
+            </div>
+            <div class="input-group mb-2">
+                <span class="input-group-text"><i class="fa fa-tag fa-fw"></i></span>
+                <input type="text" name="plot" value="{{ movie.plot }}" class="form-control {{#if errors.plot }}is-invalid{{/if}}" placeholder="Enter movie plot..." />
+                {{#if errors.plot }}<div class="invalid-feedback">{{ errors.plot }}</div>{{/if}}
+            </div>
+            <div class="input-group mb-3">
+                <label class="input-group-text"><i class="fa fa-tag fa-fw"></i></label>
+                <select class="form-select" name="mainCelebrity">
+                    {{#each celebrities}}
+                        <option value="{{this._id}}">{{this.name}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            <div class="d-grid">
+                <button class="btn btn-primary" type="submit">Edit movie</button>
+            </div>
+        </form>
+    </div>
+</div>
